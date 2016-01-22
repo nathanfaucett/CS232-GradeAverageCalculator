@@ -11,20 +11,24 @@ public class GradeAverageCalculator {
 	static int getShort(Scanner scanner) {
 		if (!scanner.hasNextShort()) {
 			System.out.println("Enter a valid Integer: ");
-			scanner.next();
+			scanner.nextLine();
 			return GradeAverageCalculator.getShort(scanner);
 		} else {
-			return scanner.nextShort();
+			int value = scanner.nextShort();
+			scanner.nextLine();
+			return value;
 		}
 	}
 
 	static double getDouble(Scanner scanner) {
 		if (!scanner.hasNextDouble()) {
 			System.out.print("Enter a valid Double: ");
-			scanner.next();
+			scanner.nextLine();
 			return GradeAverageCalculator.getDouble(scanner);
 		} else {
-			return scanner.nextDouble();
+			double value = scanner.nextDouble();
+			scanner.nextLine();
+			return value;
 		}
 	}
 
@@ -48,7 +52,7 @@ public class GradeAverageCalculator {
 
         for (int i = 0, il = number_of_students; i < il; i++) {
             System.out.print("Enter name for student #" + (i + 1) + ": ");
-            String name = scanner.next();
+            String name = scanner.nextLine();
             double avg = 0;
 
             for (int j = 0, jl = number_of_test_scores_per_student; j < jl; j++) {
